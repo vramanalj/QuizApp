@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Add a Question
+    </ion-title>
+    <ion-buttons start>
+      <button ion-button (click)="dismiss()">
+        <span ion-text showWhen="ios">Cancel</span>
+        <ion-icon name="md-close" showWhen="android,windows"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="bodyBackground">
+
+  <form margin class="" [formGroup]="newQuestionForm" (ngSubmit)="submitQuestion()">
+      <ion-list padding-top >
+          <ion-item>
+              <ion-textarea placeholder="Enter Question" formControlName="question" type="text"></ion-textarea>
+          </ion-item>
+      
+          <ion-item>
+              <ion-textarea placeholder="Choice A" formControlName="option1" type="text"></ion-textarea>
+              <ion-checkbox class="answerSelector" item-end color="secondary" formControlName="answer1"></ion-checkbox>
+          </ion-item>
+
+          <ion-item>
+              <ion-textarea placeholder="Choice B" formControlName="option2" type="text"></ion-textarea>
+              <ion-checkbox class="answerSelector" item-end color="secondary" formControlName="answer2"></ion-checkbox>
+          </ion-item>
+
+          <ion-item>
+              <ion-textarea placeholder="Choice C" formControlName="option3" type="text"></ion-textarea>
+              <ion-checkbox class="answerSelector" item-end color="secondary" formControlName="answer3"></ion-checkbox>
+          </ion-item>
+
+          <ion-item>
+              <ion-textarea placeholder="Choice D" formControlName="option4" type="text"></ion-textarea>
+              <ion-checkbox class="answerSelector" item-end color="secondary" formControlName="answer4"></ion-checkbox>
+          </ion-item>
+          <button ion-button full color="primary" [disabled]="answerCount() || !newQuestionForm.valid" style="margin-top: 20px;" type="submit">Submit Question</button>        
+      </ion-list>
+  </form>
+
+</ion-content>

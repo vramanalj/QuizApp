@@ -1,0 +1,7 @@
+node_modules/
+plugins/
+www/
+.sourcemaps/
+platforms/
+config/config-dev.json
+config/config-prod.json

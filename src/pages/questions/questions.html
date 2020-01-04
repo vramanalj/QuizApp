@@ -1,0 +1,91 @@
+
+<ion-header>
+    <ion-navbar color="primary">
+      <ion-title>Questions</ion-title>
+    </ion-navbar>
+</ion-header>
+  
+
+
+<ion-content class="bodyBackground" >
+    <ion-slides>
+        <ion-slide class="questionSlides" *ngFor="let question of questions;index as i" [attr.data-index]="i">
+            <ion-grid>
+            <ion-row class="questionRow">
+                <ion-toolbar class="question">
+                        {{question.question}}
+                </ion-toolbar>  
+            </ion-row>
+            <ion-row class="answersRow">
+                <ion-card class="answerContainer">
+                    <ion-list inset radio-group >
+                        <ion-item class="answersBox" *ngFor="let answerOption of question.answerOptions;index as questionIndex">
+                            <ion-label>{{answerOption.value}}</ion-label>
+                            <ion-radio *ngIf="radioOrCheckBox(question.answerOptions)=='radio'">
+                            </ion-radio>
+                            <ion-checkbox *ngIf="radioOrCheckBox(question.answerOptions)=='checkbox'">
+                            </ion-checkbox>
+                        </ion-item>
+                    </ion-list>
+                </ion-card>
+                <!-- <ion-row>
+                    <ng-container *ngFor="let answerOption of question.answerOptions;index as questionIndex">
+                        <ion-col class="answersBox" ion-item *ngIf="questionIndex>=2">
+                                <ion-label>{{answerOption.value}}</ion-label>
+                                <ion-radio *ngIf="radioOrCheckBox(question.answerOptions)=='radio'"></ion-radio>
+                                <ion-checkbox *ngIf="radioOrCheckBox(question.answerOptions)=='checkbox'"></ion-checkbox>
+                        </ion-col>
+                    </ng-container>
+                </ion-row> -->
+            </ion-row>
+            </ion-grid>
+            <ion-footer>
+                <ion-toolbar>
+                    <button ion-button clear full class="submitBtn">Next</button>
+                </ion-toolbar>
+            </ion-footer>
+        </ion-slide>
+    </ion-slides >
+
+    <div *ngIf="userPersona=='trainer'">
+        <ion-card *ngFor="let question of questions;index as i" [attr.data-index]="i">
+            <ion-item>
+                <sup item-left>{{i+1}}</sup>
+                <span text-wrap>{{question.question}}</span>
+            </ion-item>
+            <ion-card-content no-padding no-margin>
+                    <ion-list>
+                        <ion-item *ngFor="let answerOption of question.answerOptions">
+                            {{answerOption.value}}
+                            <ion-icon *ngIf="answerOption.isAnswer" item-end name="checkmark" color="secondary"></ion-icon>
+                        </ion-item>
+                    </ion-list>
+            </ion-card-content>
+            <ion-row no-padding>
+                    <ion-col no-padding no-margin >
+                      <button ion-button clear color="primary" icon-start (click)="openModal(question)">
+                        Edit
+                      </button>
+                    </ion-col>
+                    <!-- <ion-col text-center>
+                      <button ion-button clear small color="danger" icon-start>
+                        <ion-icon name='musical-notes'></ion-icon>
+                        Listen
+                      </button>
+                    </ion-col> -->
+                    <ion-col text-right no-padding no-margin>
+                      <button ion-button clear color="danger" icon-start (click)="deleteQuestion(i)">
+                        Delete
+                      </button>
+                    </ion-col>
+            </ion-row>
+            <!-- <button no-padding color="danger" ion-button icon-left clear item-end>
+                    <ion-icon name="close"></ion-icon>
+                    Delete
+            </button> -->
+        </ion-card>
+    </div>
+    <ion-fab bottom right *ngIf="userPersona=='trainer'" (click)="openModal()">
+        <button large ion-fab color="primary"><ion-icon name="add"></ion-icon></button>
+    </ion-fab>
+</ion-content>

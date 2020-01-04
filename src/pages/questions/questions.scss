@@ -1,0 +1,95 @@
+page-questions {
+    .questionSlides{
+        height: 100%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .grid{
+        height: calc(100% - 53px);
+        padding: 0px;
+    }
+
+    .toolbar-background {
+        background-color: transparent;
+        border-color: transparent;
+    }
+
+    .questionRow{
+        flex: 1;
+        background-color: #23A6D5;
+    }
+
+    .answersRow{
+        flex: 2;
+        background-color: #23A6D5;
+    }
+
+    .answerContainer{
+        margin: auto;
+        height: max-content;
+    }
+
+    .answerContainer ion-list{
+        padding: 0px;
+        margin: 0px!important;
+    }
+
+    .slide-zoom {
+        height: 100%;
+    }
+
+    .question{
+        font-size: 30px;
+        font-family: 'Bitter', serif;
+        box-shadow: rgba(0, 0, 0, 0.23) 4px 8px 10px 1px;
+        color: white;
+    }
+
+    ion-footer{
+        background-color: #34bc6e;
+    }
+
+    .submitBtn{
+        font-size: 24px;
+        font-family: 'Bitter', serif;
+        color: #FFFFFF;
+        background-color: transparent;
+    }
+
+    .answersBox{
+        padding: 10px;
+        font-size: 24px;
+        font-family: 'Bitter', serif;
+        // background-color: #dcd4f7;
+    }
+
+    .item-radio-checked{
+        background-color: antiquewhite;
+    }
+
+     .questionsBackground{
+        -webkit-animation: random 30s ease infinite;
+        animation: random 30s ease infinite;
+        height: 100%;
+     }
+
+     @keyframes  random {
+        0% { background-color: #3151b7; } 
+        50% { background-color: #047cc0; }
+        100% { background-color: #188291; 
+        }  
+    }
+}
+
+create-question {
+    .item-cover{
+        display: none;
+    }
+
+    .answerSelector{
+        align-self: center;
+    }
+}

@@ -1,0 +1,31 @@
+page-quizzes {
+    .questionSlides{
+       background:#95c4f3; 
+    }
+
+    .questionSlides ion-item{
+        background:#deedf7; 
+     }
+
+     .quizzImg{
+         height: 20em;
+     }
+     .quizHeader * {
+        //  background-color: #175d8d;
+         color: black;
+     }
+     .startQuizBtn{
+         color: #e62325;
+     }
+
+}
+
+create-question {
+    .item-cover{
+        display: none;
+    }
+
+    .answerSelector{
+        align-self: center;
+    }
+}

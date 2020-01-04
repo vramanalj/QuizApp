@@ -1,0 +1,1 @@
+<CORSConfiguration><CORSRule><AllowedOrigin>*</AllowedOrigin><AllowedMethod>PUT</AllowedMethod><AllowedMethod>POST</AllowedMethod><AllowedMethod>DELETE</AllowedMethod><AllowedMethod>GET</AllowedMethod><AllowedMethod>OPTIONS</AllowedMethod><AllowedHeader>*</AllowedHeader></CORSRule></CORSConfiguration>
